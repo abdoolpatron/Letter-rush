@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+    <link rel="stylesheet" href="game.css">
+    <title>Menu</title>
+</head>
+<body>
+    <div id="main-menu">
+        <div class="headings">
+        <h1 id="header1">LETTER</h1>
+        <h1 id="header2">RUSH</h1>
+        </div>
+        <div class="buttons">
+        <button class="button" id="how-to-play">How to Play</button>
+        <button class="button" id="play">Play <i class="fa fa-play" aria-hidden="true"></i></button>
+        <button class="button" id="tools">Options <i class="fa fa-wrench" aria-hidden="true"></i> </button>
+        </div>
+    </div>
+
+    <div id="difficulty">
+        <button class="button back" id="back"><i class="fa fa-arrow-left" aria-hidden="true"></i></button>
+        <h1 id="header1">DIFFICULTY</h1>
+        <div class="block">
+        <button value="1300" id="easy" class="difficulty button">Easy</button>
+        <button value="900" id="medium" class="difficulty button">Medium</button>
+        <button value="800" id="hard" class="difficulty button">Hard</button>
+        </div>
+    </div>
+
+    <div class="optional">
+        <button class="button back" id="back"><i class="fa fa-arrow-left" aria-hidden="true"></i></button>
+        <h1 id="header1">OPTIONS</h1>
+        <div class="block">
+            <button id="reset" class="button">Reset High scores</button>
+        </div>
+    </div>
+
+    <script>
+        const play = document.getElementById('play');
+        const difficultyPage = document.getElementById('difficulty');
+        const difficulties = document.getElementsByClassName('difficulty');
+        const reset = document.getElementById('reset');
+        const options = document.getElementById('tools');
+        const optionPage = document.getElementsByClassName('optional')[0];
+        const backFromOption = document.getElementsByClassName('back');
+
+
+        play.addEventListener('click', function() {
+            difficultyPage.style.display = 'block'
+        });
+
+        options.addEventListener('click', function() {
+            optionPage.style.display = 'block';
+        })
+
+        for (j = 0; j < backFromOption.length; j++) {
+        backFromOption[j].addEventListener('click', function() {
+            optionPage.style.display = 'none';
+            difficultyPage.style.display = 'none';
+        })
+    }
+        
+        for(i = 0; i < difficulties.length; i++) {
+            difficulties[i].addEventListener('click', function() {
+                sessionStorage.setItem ('speed', this.value);
+                sessionStorage.setItem("id", this.id);
+                window.open('index.html');
+                window.close('intro.html');
+            })
+        }
+
+        reset.addEventListener('click', function() {
+            localStorage.clear();
+            reset.textContent = 'Done!';
+            setTimeout(function() {
+                reset.textContent = 'Reset High scores';
+            }, 1000)
+        })
+
+</script>
+</body>
+</html>
