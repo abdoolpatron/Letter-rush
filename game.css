@@ -1,0 +1,313 @@
+body {
+    background: linear-gradient(lightblue 50%, aqua 100%);
+}
+
+
+/*Game area styling */
+
+#game-area {
+    margin: auto;
+    margin-top: 10px;  
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    text-align: center;
+    background-color: rgb(89, 92, 97);
+    border-radius: 20px;
+    height: 635px;
+    width: 60%;
+    box-shadow: 2px 2px 2px 2px aqua;
+}
+
+.progress-bar {
+    margin: auto;
+    border-radius: 10px;
+    width: inherit;
+    height: 8px;
+    background: gray;
+}
+
+.progress-bar #pbar {
+    background-color: aqua;
+    margin: 0;
+    height: inherit;
+    border-radius: inherit;
+    width: 100%;
+}
+
+/*Duration bar styling */
+#time-bar #tbar {
+    background-color: aqua;
+    margin: 0;
+    height: inherit;
+    border-radius: 10px;
+    width: 0%;
+}
+
+/*Key display syling*/
+#key-display {
+    margin: auto;
+    height: 200px;
+    width: 200px;
+    background-color: rgb(26, 25, 25);
+    border: 5px solid aqua;
+    border-radius: 50%;
+    animation: transit 0.3s;
+}
+
+#key-display #key-code {
+    font-size: 60px;
+    font-weight: bold;
+    font-family:-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    color: aqua;
+}
+
+/* Caption */
+#caption {
+    font-size: 30px;
+    font-weight: bold;
+    color: aqua;
+    font-family: cursive;
+    animation: transit2 0.95s;
+    transform: scale(2);
+} 
+
+#time-bar {
+    margin: auto;
+    border-radius: 10px;
+    width: 300px;
+    height: 20px;
+    background-color: rgb(26, 25, 25);
+}
+
+#message{
+    margin: auto;
+    text-align: center;
+    position: fixed;
+    top: 20%;
+    left: 28.4%;
+    height: 400px;
+    width: 600px;
+    background-color: rgb(60, 92, 92);
+    border: 3px solid aqua;
+    border-radius: 30px;
+    animation: modal 0.5s;
+    display: none;
+}
+
+#main-menu, #difficulty, .optional {
+    margin: auto;
+    text-align: center;
+    position: fixed;
+    top: 20%;
+    left: 28.4%;
+    height: 400px;
+    width: 600px;
+    background-color: rgb(60, 92, 92);
+    border: 3px solid gold;
+    border-radius: 30px;
+}
+.headings {
+    margin: 10px 20px 0 20px;
+    padding-bottom: 0;
+    font-size: 35px;
+}
+
+#header1 {
+    font-family: cursive;
+    font-weight: bold;
+    color: gold;
+    text-align: left;
+    margin-left: 60px;
+    padding: 0;
+}
+
+#header2 {
+    font-family: cursive;
+    font-weight: bold;
+    color: aqua;
+    text-align: right;
+    margin-right: 100px;
+    padding: 0;
+    margin-top: -60px;
+}
+
+.buttons {
+    margin-top: 50px;
+    text-align: center;
+}
+
+.button {
+margin-right: 40px;
+font-size: 22px;
+font-family: cursive;
+font-weight: bold;
+padding: 5px 16px;
+border-radius: 5px;
+background-color: inherit;
+border: 2px solid gold;
+color: gold;
+cursor: pointer;
+}
+
+.button:hover {
+    color: aqua;
+    border-color: aqua;
+}
+
+#success-fail, .score {
+    font-size: 50px;
+    font-family: cursive;
+    color: aqua;
+    margin-top: 30px;
+}
+
+#new {
+    position: relative;
+    font-size: 30px;
+    font-weight: bold;
+    font-family: cursive;
+    margin-left: -70px;
+    margin-right: 10px;
+    animation: new 1.5s infinite;
+    display: none;
+}
+
+.score:nth-child(3) {
+    color: gold;
+}
+
+
+#option {
+    margin: auto;
+    margin-top: 50px;
+    margin-left: 50px;
+    text-align: center;
+    
+}
+
+
+#difficulty{
+    display: none;
+}
+
+.optional{
+    display: none;
+}
+
+.block .button {
+    margin: auto;
+    display: block;
+    margin-bottom: 30px;
+
+}
+
+.block {
+    text-align: center;
+    margin: auto;
+    margin-top: 70px;
+}
+
+#difficulty #header1, .optional #header1 {
+    margin: auto;
+    margin-top: 20px;
+    text-align: center;
+}
+
+
+#back {
+    position: relative;
+    border: none;
+    top: 40px;
+    right: 200px;
+    text-align: left;
+    animation: arrow 1s infinite;
+}
+
+.fa.fa-arrow-left {
+    font-size: 30px;
+}
+
+
+@keyframes modal {
+    0% {
+        top: -100%;
+    }
+
+    100% {
+        top: 20%;
+    }
+}
+
+@keyframes transit {
+    0% {
+        transform: scale(0);
+        opacity: 0;
+    }
+
+    100% {
+        transform: scale(1);
+        opacity: 1;
+    }
+}
+
+@keyframes transit2 {
+    0% {
+        transform: scale(1);
+        opacity: 0;
+    }
+
+    100% {
+        transform: scale(2);
+        opacity: 1;
+    }
+}
+
+@keyframes failure {
+    0% {
+        left: 10px;
+    }
+    50% {
+        left: -30px;
+    }
+    100% {
+        left: 20px;
+    }
+}
+
+@keyframes new {
+    0% {
+        color: antiquewhite;
+        transition: ease-in;
+    }
+
+    50% {
+        color: maroon;
+        transition: ease-in;
+    }
+    100% {
+        color: antiquewhite;
+        transition: ease-in;
+    }
+}
+
+@keyframes time {
+    0% {
+        width: 0%;
+    }
+    100% {
+        width: 100%;
+    }
+}
+
+@keyframes arrow {
+    0% {
+        right: 200px;
+    }
+    50% {
+        right: 210px;
+    }
+    100% {
+        right: 200px;
+    }
+}
