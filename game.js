@@ -77,7 +77,7 @@ function failure() {
 }
 
 // gameplay
-const gameplay = () => document.addEventListener('keyup', e => {
+const power = () => document.addEventListener('keyup', e => {
     if (e.key === keyCode.textContent && keyDisplay.style.backgroundColor != 'red' && keyDisplay.style.display == 'block') {
         changeCaption();
         keyDisplay.style.display = 'none';
@@ -117,14 +117,13 @@ function countDown() {
         caption.textContent = 'GO!';
         clearInterval(count);
         game = setInterval(displayLetter, sessionStorage.getItem('speed'));
-        gameplay();
+        power();
     }
-
-    count = setInterval(countDown, 900);
 }
 
 var count;
 
+count = setInterval(countDown, 900);
 
 replay.addEventListener('click', function() {
   location.reload();
