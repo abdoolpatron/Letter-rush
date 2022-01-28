@@ -131,6 +131,6 @@ replay.addEventListener('click', function() {
 
 
 goToMenu.addEventListener('click', function() {
-    window.open('intro.html');
-    window.close('index.html');
+    window.open('index.html');
+    window.close('game.html');
 })
